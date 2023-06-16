@@ -1,0 +1,18 @@
+micronaut:
+  application:
+    name: aws
+  object-storage:
+    aws:
+      default:
+        bucket: yoxford #'${OBJECT_STORAGE_BUCKET}'
+#datasources:
+#  default:
+#    ocid: ''
+#    walletPassword: ''
+#oci:
+#  config:
+#    profile: DEFAULT
+netty:
+  default:
+    allocator:
+      max-order: 3
