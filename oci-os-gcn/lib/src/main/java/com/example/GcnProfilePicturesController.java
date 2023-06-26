@@ -16,6 +16,7 @@ import io.micronaut.objectstorage.request.UploadRequest;
 import io.micronaut.objectstorage.response.UploadResponse;
 import io.micronaut.scheduling.TaskExecutors;
 import io.micronaut.scheduling.annotation.ExecuteOn;
+import io.micronaut.context.annotation.Requires;
 
 import java.net.URI;
 import java.util.Optional;
@@ -23,16 +24,21 @@ import java.util.Optional;
 import static io.micronaut.http.HttpHeaders.ETAG;
 import static io.micronaut.http.MediaType.IMAGE_JPEG_TYPE;
 
-@Controller(ProfilePicturesController.PREFIX)
+@Requires(property="cloud.sdk", value="GCN")
+@Controller(GcnProfilePicturesController.PREFIX)
 @ExecuteOn(TaskExecutors.IO)
-class ProfilePicturesController implements ProfilePicturesApi {
+class GcnProfilePicturesController implements ProfilePicturesApi {
+
+    {
+        System.out.println("GcnProfilePicturesController");
+    }
 
     static final String PREFIX = "/pictures";
 
     private final ObjectStorageOperations<?, ?, ?> objectStorage;
     private final HttpHostResolver httpHostResolver;
 
-    ProfilePicturesController(ObjectStorageOperations<?, ?, ?> objectStorage,
+    GcnProfilePicturesController(ObjectStorageOperations<?, ?, ?> objectStorage,
                               HttpHostResolver httpHostResolver) {
         this.objectStorage = objectStorage;
         this.httpHostResolver = httpHostResolver;
@@ -66,7 +72,7 @@ class ProfilePicturesController implements ProfilePicturesApi {
     public Optional<HttpResponse<StreamedFile>> download(String userId) {
         String key = buildKey(userId);
         return objectStorage.retrieve(key)
-                .map(ProfilePicturesController::buildStreamedFile);
+                .map(GcnProfilePicturesController::buildStreamedFile);
     }
 
     private static HttpResponse<StreamedFile> buildStreamedFile(ObjectStorageEntry<?> entry) {

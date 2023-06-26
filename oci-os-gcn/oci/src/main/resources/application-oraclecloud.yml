@@ -16,3 +16,8 @@ netty:
 oci:
   config:
     profile: DEFAULT
+cloud:
+  sdk: '${CLOUD_JAVA_SDK}'
+  # sdk: "GCN"
+  # sdk: "OCI"
+  # sdk: "AWS"
