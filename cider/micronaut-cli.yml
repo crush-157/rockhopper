@@ -1,0 +1,6 @@
+applicationType: default
+defaultPackage: com.oracle.labs.cider
+testFramework: junit
+sourceLanguage: java
+buildTool: maven
+features: [annotation-api, app-name, gcn-bom, gcn-license, gcn-oci-cloud-app, gcn-oci-objectstore, graalvm, http-client, jackson-databind, java, java-application, junit, logback, maven, netty-server, object-storage-oracle-cloud, oracle-cloud-sdk, readme, shade, yaml]

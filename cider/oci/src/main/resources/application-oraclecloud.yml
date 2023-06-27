@@ -1,0 +1,22 @@
+micronaut:
+  application:
+    name: oci
+  object-storage:
+    oracle-cloud:
+      default:
+        bucket: ess.gcn-examples.os-bucket
+        namespace: oracledeveloper
+  server:
+    multipart:
+      max-file-size: 20971520 # 20MB
+netty:
+  default:
+    allocator:
+      max-order: 3
+oci:
+  config:
+    profile: DEFAULT
+cloud:
+  sdk: '${CLOUD_JAVA_SDK}'
+  # sdk: "GCN"
+  # sdk: "OCI"
