@@ -17,10 +17,8 @@ import io.micronaut.objectstorage.response.UploadResponse;
 import io.micronaut.scheduling.TaskExecutors;
 import io.micronaut.scheduling.annotation.ExecuteOn;
 import io.micronaut.context.annotation.Requires;
-
 import java.net.URI;
 import java.util.Optional;
-
 import static io.micronaut.http.HttpHeaders.ETAG;
 import static io.micronaut.http.MediaType.IMAGE_JPEG_TYPE;
 

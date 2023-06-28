@@ -1,12 +1,11 @@
 // Copyright (c) 2023, Oracle.
 // Licensed under the Universal Permissive License v 1.0 as shown at https://oss.oracle.com/licenses/upl.
 package com.oracle.labs.cider;
-import static io.micronaut.http.MediaType.IMAGE_JPEG_TYPE;
 
+import static io.micronaut.http.MediaType.IMAGE_JPEG_TYPE;
 import java.io.IOException;
 import java.net.URI;
 import java.util.Optional;
-
 import com.oracle.bmc.ConfigFileReader;
 import com.oracle.bmc.auth.ConfigFileAuthenticationDetailsProvider;
 import com.oracle.bmc.objectstorage.ObjectStorageClient;
@@ -19,7 +18,6 @@ import com.oracle.bmc.objectstorage.transfer.DownloadManager;
 import com.oracle.bmc.objectstorage.transfer.UploadConfiguration;
 import com.oracle.bmc.objectstorage.transfer.UploadManager;
 import com.oracle.bmc.objectstorage.transfer.UploadManager.UploadRequest;
-
 import io.micronaut.context.annotation.Requires;
 import io.micronaut.context.annotation.Value;
 import io.micronaut.http.HttpRequest;
